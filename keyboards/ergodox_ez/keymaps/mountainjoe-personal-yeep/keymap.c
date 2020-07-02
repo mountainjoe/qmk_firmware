@@ -14,7 +14,7 @@
 #include "keymap_italian.h"
 #include "keymap_slovenian.h"
 #include "keymap_danish.h"
-#include "keymap_norwegian.h"
+//#include "keymap_norwegian.h"
 #include "keymap_portuguese.h"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
