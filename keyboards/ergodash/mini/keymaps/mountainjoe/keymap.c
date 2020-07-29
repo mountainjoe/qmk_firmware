@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GSP_ESC,  DV_QUOT, DV_COMM, DV_DOT,  DV_P,    DV_Y,   XXXXXXX,                      XXXXXXX,  DV_F,    DV_G,    DV_C,    DV_R,    DV_L,  DV_SLSH, \
     CTL_TICK, DV_A,    DV_O,    DV_E,    DV_U,    DV_I,   VSC_BCK,                      XXXXXXX,  DV_D,    DV_H,    DV_T,    DV_N,    DV_S,  DV_MINS, \
     KC_LSPO,  DV_SCLN, DV_Q,    DV_J,    DV_K,    DV_X,           SFT_DEL ,    KC_TAB ,           DV_B,    DV_M,    DV_W,    DV_V,    DV_Z,  KC_RSPC, \
-    XXXXXXX,  XXXXXXX, XXXXXXX,        G_NAVI,  G_NUMS,   KC_SPC, CMD_BSPC,    CTL_ESC,  KC_ENT, XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, \
+    XXXXXXX,  XXXXXXX, XXXXXXX,        G_NAVI,  G_NUMS,   KC_SPC, CMD_BSPC,    CTL_ESC,  KC_ENT, XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX  \
   ),
 
  [_NUMS] = LAYOUT(
@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  ),
 
   [_NAVI] = LAYOUT(
-    _______, _______, _______, _______, _______, _______, _______,                      _______, _______,   KC_UP,   KC_DOWN, _______, _______, _______, \
-    _______, _______, _______, _______, _______, _______, _______,                      _______, _______, KC_LEFT,  KC_RIGHT, _______, _______, _______, \
-    _______, _______, _______, _______, _______, _______,          _______,    _______,          _______, KC_PGUP, KC_PGDOWN, _______, _______, _______, \
+    _______, _______, _______, RGB_SAI, RGB_SAD, _______, _______,                      RGB_TOG, _______,   KC_UP,   KC_DOWN, _______, _______, _______, \
+    _______, _______, _______, RGB_HUI, RGB_HUD, _______, _______,                      RGB_MOD, _______, KC_LEFT,  KC_RIGHT, _______, _______, _______, \
+    _______, _______, _______, RGB_VAI, RGB_VAD, _______,          _______,    _______,          _______, KC_PGUP, KC_PGDOWN, _______, _______, _______, \
     _______, _______, _______,          _______, _______, _______, _______,    _______, _______, _______, _______,            _______, _______, _______  \
   ),
 
