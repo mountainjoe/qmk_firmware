@@ -10,6 +10,35 @@
 #define _NAVI 2
 #define _SPEC 3
 
+#if COMBO_ENABLE
+
+enum combos {
+  AOEU_LAYER1,
+  HTNS_LAYER1
+};
+
+const uint16_t PROGMEM aoeu_combo[] = {DV_A, DV_O, DV_E, DV_U, COMBO_END};
+const uint16_t PROGMEM htns_combo[] = {DV_H, DV_T, DV_N, DV_S, COMBO_END};
+
+combo_T key_combos[COMBO_COUNT] = {
+  [AOEU_LAYER1] = COMBO_ACTION(aoeu_combo),
+  [HTNS_LAYER1] = COMBO_ACTION(htns_combo),
+};
+
+void process_combo_event(uint8_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case AOEU_LAYER1:
+    case HTNS_LAYER1:
+      if (pressed) {
+        layer_on(_NUMS);
+      } else {
+        layer_off(_NUMS);
+      }
+      break;
+  }
+};
+
+#endif /* Combo enable */
 
 enum custom_keycodes {
     _2COLON = SAFE_RANGE,
@@ -23,8 +52,8 @@ enum custom_keycodes {
 #define CTL_ESC LCTL_T(KC_ESCAPE)
 #define SCNSHOT LGUI(LSFT(KC_4))
 
-#define G_NAVI OSL(_NAVI)
-#define G_NUMS OSL(_NUMS)
+#define G_NAVI  MO(_NAVI)
+#define G_NUMS  MO(_NUMS)
 #define GSP_ESC LT(_SPEC,KC_ESC)
 
 #define VSC_BCK LCTL(DV_MINS)
@@ -45,10 +74,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
  [_NUMS] = LAYOUT(
-    _______,  DV_EXLM,  DV_AT,  DV_LCBR, DV_RCBR,   DV_PIPE, _______,                        _______, DV_CIRC,    KC_7,    KC_8,    KC_9,  KC_KP_PLUS,  _______, \
-    _______,  DV_HASH,  DV_DLR, KC_LPRN, KC_RPRN, KC_BSLASH, _______,                        _______, DV_PERC,    KC_4,    KC_5,    KC_6,  KC_KP_MINUS, _______, \
-    _______,  _2COLON, XXXXXXX, DV_LBRC, DV_RBRC,   DV_TILD,           _______,     _______,          DV_AMPR,    KC_1,    KC_2,    KC_3,  KC_KP_EQUAL, _______, \
-    _______,  _______, _______,          _______,   _______, _______,  _______,     _______, _______, KC_KP_0,   KC_KP_DOT,       _______, KC_BSLASH,   _______  \
+    _______ ,  DV_EXLM,  DV_AT,  DV_LCBR, DV_RCBR,   DV_PIPE, _______,                        _______, DV_CIRC,    KC_7,    KC_8,    KC_9,  KC_KP_PLUS,  KC_BSLASH, \
+    DV_TILD ,  DV_HASH,  DV_DLR, KC_LPRN, KC_RPRN, KC_BSLASH, _______,                        _______, DV_PERC,    KC_4,    KC_5,    KC_6,  KC_KP_MINUS, _______, \
+    _______ ,  _2COLON, XXXXXXX, DV_LBRC, DV_RBRC,   DV_TILD,           _______,     _______,          DV_AMPR,    KC_1,    KC_2,    KC_3,  KC_KP_EQUAL, _______, \
+    _______ ,  _______, _______,          _______,   _______, _______,  _______,     _______, _______, KC_KP_0,   KC_KP_DOT,       _______, _______,   _______  \
  ),
 
   [_NAVI] = LAYOUT(
