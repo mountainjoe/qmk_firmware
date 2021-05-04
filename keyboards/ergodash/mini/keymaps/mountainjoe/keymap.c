@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
  [_NUMS] = LAYOUT(
-    _______ ,  DV_EXLM,  DV_AT,  DV_LCBR, DV_RCBR,   DV_PIPE, _______,                        _______, DV_CIRC,    KC_7,    KC_8,    KC_9,  KC_KP_PLUS,  KC_BSLASH, \
+    _______ ,  DV_EXLM,  DV_AT,  DV_LCBR, DV_RCBR,   DV_PIPE, _______,                        _______, DV_CIRC,    KC_7,    KC_8,    KC_9,  DV_EQL,  KC_BSLASH, \
     DV_TILD ,  DV_HASH,  DV_DLR, KC_LPRN, KC_RPRN, KC_BSLASH, _______,                        _______, DV_PERC,    KC_4,    KC_5,    KC_6,  KC_KP_MINUS, _______, \
     _______ ,  _2COLON, XXXXXXX, DV_LBRC, DV_RBRC,   DV_TILD,           _______,     _______,          DV_AMPR,    KC_1,    KC_2,    KC_3,  KC_KP_EQUAL, _______, \
     _______ ,  _______, _______,          _______,   _______, _______,  _______,     _______, _______, KC_KP_0,   KC_KP_DOT,       _______, _______,   _______  \
